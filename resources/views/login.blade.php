@@ -5,7 +5,7 @@
 @section("login-form")
     <!-- Форма входа -->
     <div class="login-form">
-        <form action="" method="POST">
+        <form action="{{ route('login_form') }}" method="POST">
             <!-- Ключ безопасности -->
             @csrf
 

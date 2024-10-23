@@ -9,3 +9,4 @@ Route::get("/", [indexController::class, "indexPage"])->name("index_page");
 
 // Маршутиризация для страницы входа
 Route::get("/login", [loginController::class, "loginPage"])->name("login_page");
+Route::post("/login", [loginController::class, "processingForm"])->name("login_form");
