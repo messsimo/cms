@@ -1,13 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CMS</title>
-    <!-- Подключение CSS -->
-    <link rel="stylesheet" href="{{ asset('css/index.css') }}">
-</head>
-<body>
-    
-</body>
-</html>
+<!-- Подключение шаблона сборщика -->
+@extends("layouts.app")
+
+<!-- Секция -->
+@section("index")
+    <h1>Index page</h1>
+    <a href="{{ route('login_page') }}">Log In</a>
+@endsection

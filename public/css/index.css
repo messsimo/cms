@@ -1,0 +1,21 @@
+/* Подключение шрифтов */
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap');
+
+/* Базовые стили */
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    font-family: "Sora", sans-serif;
+    font-weight: 400;
+}
+
+img {
+    max-width: 100%;
+}
+
+a, button {
+    cursor: pointer;
+}
