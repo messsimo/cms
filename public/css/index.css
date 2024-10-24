@@ -19,3 +19,65 @@ img {
 a, button {
     cursor: pointer;
 }
+
+/* Стили блока контейнера */
+.main-wrapper {
+    width: 100%;
+}
+
+/* Стили для блока навигации */
+.cms-navigation {
+    width: 25%;
+    border-right: 1px solid #ddd;
+    background-color: #27272a;
+    min-height: 100vh;
+}
+
+.cms-navigation .cms-navigation--top {
+    display: grid;
+    place-items: center;
+}
+
+.cms-navigation h2 {
+    padding-top: 75px;
+    font-size: 26px;
+    font-weight: 400;
+    color: white;
+
+}
+
+.cms-navigation img {
+    border-radius: 60px;
+    width: 100px;
+    height: 100px;
+    margin-top: 25px;
+}
+
+.cms-navigation p {
+    margin-top: 10px;
+    color: white;
+    font-size: 18px;
+}
+
+.cms-navigation nav {
+    margin: 0 25px;
+    margin-top: 50px;
+}
+
+.cms-navigation nav a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    /* margin-bottom: 10px; */
+    transition: 0.2s ease-in;
+}
+
+.cms-navigation nav hr {
+    margin-bottom: 20px;
+    background-color: #71717a;
+    margin-top: 5px;
+}
+
+.cms-navigation nav a:hover {
+    color: #71717a;
+}
