@@ -30,10 +30,9 @@ class loginController extends Controller {
 
         // Переадрессация в случае наличия пользователя
         if ($user) {
-            foreach($user as $el) {
-                if ($password === $el->password) {
-                    return view("index");
-                }
+            $user = $user->first();
+            if (password_verify($password, $user->password)) {
+                return view("index", ["user" => $user]);
             }
         }
 
