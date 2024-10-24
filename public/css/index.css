@@ -18,14 +18,36 @@ img {
 
 a, button {
     cursor: pointer;
+    font-family: "Sora", sans-serif;
+    font-weight: 400;
 }
 
 /* Стили блока контейнера */
 .main-wrapper {
     width: 100%;
+    display: flex;
 }
 
-/* Стили для блока навигации */
+/* Overlay */
+.overlay {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    opacity: 0; 
+    visibility: hidden; 
+    transition: 0.1s ease-in; 
+    z-index: 1; 
+}
+
+.overlay.active {
+    opacity: 1; 
+    visibility: visible; 
+}
+
+/* Стили навигации */
 .cms-navigation {
     width: 25%;
     border-right: 1px solid #ddd;
@@ -80,4 +102,188 @@ a, button {
 
 .cms-navigation nav a:hover {
     color: #71717a;
+}
+
+/* Стили основного блока */
+.dashboard {
+    padding: 50px;
+}
+
+.dashboard .create {
+    padding-bottom: 25px;
+}
+
+.dashboard .create button {
+    margin-right: 25px;
+    padding: 10px 25px;
+    border: none;
+    background-color: #F4D35E;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: 0.2s ease-in;
+    box-shadow: 0 0 1px 1px rgba(109, 109, 109, 0.2);
+}
+
+.dashboard .create button:hover {
+    background-color: #E6B933;
+}
+
+.dashboard .create button:last-child {
+    margin-right: 0px;
+}
+
+.dashboard .dashboard-info {
+    width: 100%;
+}
+
+.dashboard .dashboard-info table {
+    background-color: #F9F9F9;
+    width: 900px;
+    border-collapse: collapse;
+}
+
+.dashboard .dashboard-info table thead {
+    background-color: #4A90E2;
+}
+
+.dashboard .dashboard-info table thead tr th {
+    padding: 10px 15px;
+    font-weight: 500;
+    text-align: center;
+    border: 1px solid #DDDDDD;
+}
+
+.dashboard .dashboard-info table tbody tr td {
+    text-align: center;
+    color: #333333;
+    border: 1px solid #DDDDDD;
+    padding: 10px 15px;
+}
+
+.dashboard .dashboard-info table tbody tr {
+    transition: 0.1s ease-in;
+}
+
+.dashboard .dashboard-info table tbody tr:hover {
+    background-color: #E8F1FA;
+}
+
+.dashboard .dashboard-info table tbody tr .expenses {
+    color: #E57373;
+}
+
+.dashboard .dashboard-info table tbody tr .profit {
+    color: #7dd182;
+}
+
+/* Стили формы создания нового пользователя */
+.create-user--form {
+    position: absolute;
+    box-shadow: 0 0 4px 4px rgba(109, 109, 109, 0.2);
+    top: 100px;
+    left: 34%;
+    width: 500px;
+    border-radius: 18px; 
+    opacity: 0;
+    visibility: hidden;
+    z-index: 2;
+    transition: 0.1s ease-in;
+}
+
+.create-user--form.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.create-user--form form {
+    display: grid;
+    place-items: center;
+    background-color: #F0F4F8;
+    padding: 25px;   
+    border-radius: 18px; 
+}
+
+.create-user--form form h2 {
+    padding-top: 25px;
+    font-size: 26px;
+    margin-bottom: 25px;
+}
+
+.create-user--form form label {
+    display: block;
+    color: #27272a;
+    font-size: 16px;
+}
+
+.create-user--form form input {
+    display: block;
+    width: 100%;
+    outline: none;
+    border: 1px solid #999;
+    border-radius: 4px;
+    padding: 10px 0px 10px 10px;
+    margin: 5px 0px 15px 0px;
+    font-size: 14px;
+    color: #27272a;
+}
+
+.create-user--form form select {
+    width: 102%;
+    padding: 10px;
+    border: 1px solid #999;
+    border-radius: 5px;  
+    color: #455A64; 
+    font-size: 14px; 
+    cursor: pointer;
+    outline: none;
+    background-size: 12px; 
+}
+
+.create-user--form form select option {
+    font-size: 14px;
+}
+
+.create-user--form form button {
+    width: 102%;
+    padding: 10px 0;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 16px;
+    background-color: #00aaff;
+    transition: 0.2s ease-in-out;
+    margin-top: 15px;
+    margin-bottom: 25px;
+}
+
+.create-user--form form button:hover {
+    background-color: #008fcc;
+}
+
+.create-user--form form .alert {
+    width: 96%;
+    border-radius: 4px;
+    margin: 5px 0 20px 0;
+    padding: 15px;
+    background-color: #ef4444;
+}
+
+.create-user--form form .alert ul {
+    list-style: none;
+}
+
+.create-user--form form .alert ul li {
+    color: white;
+    font-size: 14px;
+    margin-bottom: 2px;
+}
+
+.create-user--form form a {
+    color: #FF6F61;
+    text-decoration: underline;
+    transition: 0.2s ease-in;
+}
+
+.create-user--form form a:hover {
+    color: #E6594E;
 }

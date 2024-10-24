@@ -17,7 +17,7 @@
             <input type="password" name="password" placeholder="******">
 
             <!-- Вывод оповещений -->
-            @if($errors->any())
+            @if($errors->any)
             <div class="alert">
                 <ul>
                     @foreach($errors->all() as $el)
