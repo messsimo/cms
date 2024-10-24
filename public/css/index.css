@@ -268,16 +268,6 @@ a, button {
     background-color: #ef4444;
 }
 
-.create-user--form form .alert ul {
-    list-style: none;
-}
-
-.create-user--form form .alert ul li {
-    color: white;
-    font-size: 14px;
-    margin-bottom: 2px;
-}
-
 .create-user--form form a {
     color: #FF6F61;
     text-decoration: underline;
@@ -286,4 +276,34 @@ a, button {
 
 .create-user--form form a:hover {
     color: #E6594E;
+}
+
+.dashboard .alert {
+    width: 96%;
+    border-radius: 4px;
+    margin: -10px 0 20px 0;
+    padding: 15px;
+    background-color: #ef4444;
+}
+
+.dashboard .success {
+    background-color: #4CAF50;
+}
+
+.dashboard .success span {
+    color: white;
+    font-size: 14px;
+    font-weight: 300;
+    
+}
+
+.dashboard .alert ul {
+    list-style: none;
+}
+
+.dashboard .alert ul li {
+    color: white;
+    font-size: 14px;
+    font-weight: 300;
+    margin-bottom: 2px;
 }

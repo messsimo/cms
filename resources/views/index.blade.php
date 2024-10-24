@@ -38,7 +38,7 @@
         </div>
 
         <div class="create-user--form">
-            <form action="" method="POST">
+            <form action="{{ route('addUser_form') }}" method="POST">
                 <h2>Create new user</h2>
                 @csrf 
                 <label for="">Login</label>
@@ -54,21 +54,28 @@
                     <option value="Staff">Staff</option>
                 </select>
 
-                <!-- Вывод уведомлений -->
-                @if($errors->any())
-                <div class="alert">
-                    @foreach($errors->all as $el)
-                    <ul>
-                        <li>{{ $el }}</li>
-                    </ul>
-                    @endforeach
-                </div>
-                @endif
-
                 <button type="submit">Create new user</button>
                 <a type="button" id="closeForm-btn" href="javascript:void(0)">Close the form</a>
             </form>
         </div>
+
+        <!-- Вывод ошибок из формы -->
+        @if($errors->any())
+        <div class="alert">
+            @foreach($errors->all() as $el)
+                <ul>
+                    <li>{{ $el }}</li>
+                </ul>
+            @endforeach
+        </div>
+        @endif
+
+        <!-- Вывод успешной сессии -->
+        @if(session("success"))
+            <div class="alert success">
+                <span>{{ session('success') }}</span>
+            </div>
+        @endif
 
         <div class="dashboard-info">
             <table>
