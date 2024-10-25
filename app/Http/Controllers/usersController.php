@@ -28,6 +28,8 @@ class usersController extends Controller {
         $users->save();
 
         // Редирект
-        return redirect()->route('index_page')->with("success", "User was added");
+        return redirect()->route('login_page')->with([
+            "success" => "User was added"
+        ]);
     }
 }

@@ -33,7 +33,10 @@
     <div class="dashboard">
         <div class="create">
             <!-- Кнопка создания нового пользователя -->
-            <button type="button" id="openForm-btn">Create new user</button>
+            @if($user->access == "Admin") 
+                <button type="button" id="openForm-btn">Create new user</button>
+            @else 
+            @endif
         </div>
 
         <div class="create-user--form">
