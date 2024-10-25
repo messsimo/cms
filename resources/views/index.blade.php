@@ -102,6 +102,53 @@
                 </tbody>
             </table>
         </div>
+
+        <div class="charts">
+            <!-- График продаж -->
+            <canvas id="myChart"></canvas>
+        </div>
     </div>
     </div> 
+
+    <!-- Подключение библиотеки Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Преобразование данных в JSON-формат
+        const salesData = @json($sales_accounting);
+
+        // Данные для графика
+        const labels = salesData.map(el => el.month_year); 
+        const success_sales = salesData.map(el => el.success_sales);
+        const unsuccess_sales = salesData.map(el => el.unsuccess_sales);
+
+        // График с данными
+        const ctx = document.getElementById("myChart").getContext("2d");
+        const myChart = new Chart(ctx, {
+            type: "bar",
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: "Success sales",
+                    data: success_sales,
+                    backgroundColor: '#4CAF50',
+                    borderColor: '#4CAF50',
+                    borderWidth: 1
+                },
+                {
+                    label: "Unsuccess sales",
+                    data: unsuccess_sales,
+                    backgroundColor: '#FF6B6B',
+                    borderColor: '#FF6B6B',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }   
+            }
+        });
+    </script>
 @endsection

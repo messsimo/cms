@@ -307,3 +307,13 @@ a, button {
     font-weight: 300;
     margin-bottom: 2px;
 }
+
+.dashboard .charts {
+    margin-top: 100px;
+
+}
+
+.dashboard .charts canvas {
+    width: 10px;
+    height: 10px;
+}
