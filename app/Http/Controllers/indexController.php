@@ -9,8 +9,12 @@ class indexController extends Controller {
     public function indexPage() {
         // Подключение к модели
         $sales_accounting = sales_accounting::all();
+        $sales_accounting_pagination = sales_accounting::paginate(12);
         
         // Редирекет
-        return view("index", ["sales_accounting" => $sales_accounting]);
+        return view("index", [
+            "sales_accounting" => $sales_accounting, 
+            "sales_accounting_pagination" => $sales_accounting_pagination
+        ]);
     }
 }

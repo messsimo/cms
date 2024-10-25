@@ -89,7 +89,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($sales_accounting as $el)
+                    @foreach($sales_accounting_pagination as $el)
                     <tr>
                         <td>{{ $el->month_year }}</td>
                         <td>{{ $el->total_sales }}</td>
@@ -101,6 +101,10 @@
                     @endforeach
                 </tbody>
             </table>
+
+            <div class="pagination">
+                {{ $sales_accounting_pagination->links('vendor.pagination.custom') }}
+            </div>
         </div>
 
         <div class="charts">

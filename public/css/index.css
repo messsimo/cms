@@ -317,3 +317,35 @@ a, button {
     width: 10px;
     height: 10px;
 }
+
+/* Стили пагинации */
+.pagination {
+    padding-top: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+.pagination ul {
+    list-style: none;
+}
+
+.page-item.active .page-link {
+    background-color: #00aaff;
+    border-color: #00aaff;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.page-link {
+    color: #00aaff;
+    margin: 10px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.page-item.active .page-link:hover {
+    background-color: #008fcc;
+}
