@@ -14,7 +14,6 @@
         <div class="cms-navigation--top">
             <h2>CMS</h2>
             <img src="{{ asset('images/anton.png') }}" alt="User image">
-            <!-- Заменить Admin в <p> на динамический параметр вошедщего юзера-->
             <p>{{ $user->login ?? '' }}</p> 
         </div>
 
