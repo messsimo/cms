@@ -89,31 +89,16 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <!-- Сделать вывод из БД -->
+                    @foreach($sales_accounting as $el)
                     <tr>
-                        <td>August</td>
-                        <td>289</td>
-                        <td>173</td>
-                        <td>116</td>
-                        <td class="expenses">-7.632$</td>
-                        <td class="profit">+9.811$</td>
-                        </tr>
-                    <tr>
-                        <td>August</td>
-                        <td>289</td>
-                        <td>173</td>
-                        <td>116</td>
-                        <td class="expenses">-7.632$</td>
-                        <td class="profit">+9.811$</td>
+                        <td>{{ $el->month_year }}</td>
+                        <td>{{ $el->total_sales }}</td>
+                        <td>{{ $el->success_sales }}</td>
+                        <td>{{ $el->success_sales }}</td>
+                        <td class="expenses">-{{ number_format($el->expenses) }}$</td>
+                        <td class="profit">+{{ number_format($el->profit) }}$</td>
                     </tr>
-                    <tr>
-                        <td>August</td>
-                        <td>289</td>
-                        <td>173</td>
-                        <td>116</td>
-                        <td class="expenses">-7.632$</td>
-                        <td class="profit">+9.811$</td>
-                    </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>
